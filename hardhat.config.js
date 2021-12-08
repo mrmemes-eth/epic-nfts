@@ -1,5 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
-const process = require("process");
+require("process");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -17,12 +17,13 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
 module.exports = {
   solidity: "0.8.0",
   networks: {
     rinkeby: {
-      url: process.env['ALCHEMY_API_URL'],
-      accounts: [ process.env['ALCHEMY_ACCOUNT_KEY'] ],
+      url: process.env["ALCHEMY_RINKEBY_API_URL"],
+      accounts: [process.env["PRIVATE_ACCOUNT_KEY"]],
     },
   },
 };
