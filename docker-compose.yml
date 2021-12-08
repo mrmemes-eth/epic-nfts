@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    image: epic-nfts/latest
+    environment:
+      - ALCHEMY_RINKEBY_API_URL=${ALCHEMY_RINKEBY_API_URL}
+      - PRIVATE_ACCOUNT_KEY=${PRIVATE_ACCOUNT_KEY}
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
