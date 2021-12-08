@@ -13,3 +13,12 @@ npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
 ```
+
+## Useful Docker commands:
+
+```shell
+# Build the container:
+docker build . -t epic-nfts/latest
+# get a bash shell in the container:
+docker run -it epic-nfts/latest bash
+```
