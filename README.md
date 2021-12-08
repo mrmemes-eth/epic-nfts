@@ -18,7 +18,7 @@ npx hardhat help
 
 ```shell
 # Build the container:
-docker build . -t epic-nfts/latest
-# get a bash shell in the container:
-docker run -it epic-nfts/latest bash
+docker build . -t epicnfts/latest
+# get a bash shell in the container and forward ports:
+docker-compose run --rm --service-ports epicnfts
 ```

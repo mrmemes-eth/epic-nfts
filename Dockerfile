@@ -2,9 +2,14 @@ FROM node:16
 
 WORKDIR /usr/src/app
 
-# copy over just the package so this layer stays cached unless deps change
-COPY package*.json ./
-RUN npm install
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+RUN npm install && mv node_modules ../
 
-# now copy over the app's source
 COPY . .
+
+EXPOSE 8080
+
+RUN chown -R node /usr/src/app
+USER node
+
+ENTRYPOINT /bin/bash
