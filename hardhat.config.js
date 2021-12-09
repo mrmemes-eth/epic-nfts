@@ -1,3 +1,4 @@
+require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
 require("process");
 
@@ -20,6 +21,11 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 module.exports = {
   solidity: "0.8.0",
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env["ETHERSCAN_API_KEY"],
+  },
   networks: {
     rinkeby: {
       url: process.env["ALCHEMY_RINKEBY_API_URL"],
